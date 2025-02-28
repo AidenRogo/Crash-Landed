@@ -8,4 +8,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Aiden Scene");
     }
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Exiting Game");
+    }
 }
