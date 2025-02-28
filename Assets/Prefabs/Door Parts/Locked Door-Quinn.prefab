@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 7051138979225095128}
   - component: {fileID: 233306705135378386}
   m_Layer: 0
-  m_Name: Locked Door
+  m_Name: Locked Door-Quinn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

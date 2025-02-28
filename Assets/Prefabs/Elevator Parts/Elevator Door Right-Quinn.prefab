@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 6669586273734792424}
   - component: {fileID: 7356546131055784314}
   m_Layer: 0
-  m_Name: Elevator Door Right
+  m_Name: Elevator Door Right-Quinn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
