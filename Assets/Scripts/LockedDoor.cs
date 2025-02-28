@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LockedDoor : MonoBehaviour
 {
+    public float moveSpeed = 1f;
 
 //--------------------------------------------------------------------------------------------
     // These reference all side of the door sprite
@@ -21,6 +22,7 @@ public class LockedDoor : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------
 
     private bool isOpen = false; // Flag to check if the door is open
+    private bool isMoving = false; // Flag to check if the door is moving
 
 //--------------------------------------------------------------------------------------------
     void Start()
@@ -35,25 +37,41 @@ public class LockedDoor : MonoBehaviour
 
 //--------------------------------------------------------------------------------------------
     // Method to handle the button press
-    public void ButtonPressed()
+   public void ButtonPressed()
     {
+        if(!isMoving)
+        {
+         
         if (!isOpen)
         {
             // Move the sprites by 1 unit either side
-            topLeftSide.position += new Vector3(-1, 0, 0); // Move the top left sprite to the left -1 unit
-            bottomLeftSide.position += new Vector3(-1, 0, 0); // Move the bottom left sprite to the left -1 unit
-            topRightSide.position += new Vector3(1, 0, 0); // Move the top right sprite to the right 1 unit
-            bottomRightSide.position += new Vector3(1, 0, 0); // Move the bottom right sprite to the right 1 unit;
+            StartCoroutine(MoveSprite(topLeftSide, topLeftSide.position + new Vector3(-1, 0, 0)));
+            StartCoroutine(MoveSprite(bottomLeftSide, bottomLeftSide.position + new Vector3(-1, 0, 0)));
+            StartCoroutine(MoveSprite(topRightSide, topRightSide.position + new Vector3(1, 0, 0)));
+            StartCoroutine(MoveSprite(bottomRightSide, bottomRightSide.position + new Vector3(1, 0, 0)));
         }
         else
         {
             // Move the sprites back to their original positions
-            // This is if the door is already open and the button is pressed again
-            topLeftSide.position = originalPositionTopLeft; // Revert position
-            bottomLeftSide.position = originalPositionBottomLeft; // Revert position
-            topRightSide.position = originalPositionTopRight; // Revert position
-            bottomRightSide.position = originalPositionBottomRight; // Revert position
+            StartCoroutine(MoveSprite(topLeftSide, originalPositionTopLeft));
+            StartCoroutine(MoveSprite(bottomLeftSide, originalPositionBottomLeft));
+            StartCoroutine(MoveSprite(topRightSide, originalPositionTopRight));
+            StartCoroutine(MoveSprite(bottomRightSide, originalPositionBottomRight));
         }
         isOpen = !isOpen; // Toggle the isOpen flag
+    }
+    }
+
+    // Coroutine to smoothly move a sprite to a target position
+    private IEnumerator MoveSprite(Transform sprite, Vector3 targetPosition)
+    {
+        isMoving = true; // Set the isMoving flag to true
+        while (Vector3.Distance(sprite.position, targetPosition) > 0.01f)
+        {
+            sprite.position = Vector3.MoveTowards(sprite.position, targetPosition, moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+        sprite.position = targetPosition; // Ensure the sprite reaches the target position
+        isMoving = false; // Set the isMoving flag to false
     }
 }
