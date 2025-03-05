@@ -5,11 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fuse
-<<<<<<< HEAD
   - Box
-  - Box2
-=======
->>>>>>> main
+  - Floor
   layers:
   - Default
   - TransparentFX
