@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Fuse
-<<<<<<< HEAD
-  - Box
-  - Box2
-=======
->>>>>>> main
+  tags: []
   layers:
   - Default
   - TransparentFX

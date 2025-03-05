@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
-
-
     public bool isPowered = false; // Flag to check if the generator is powered
     public Elevator Elevator; // Reference to the Elevator component
 

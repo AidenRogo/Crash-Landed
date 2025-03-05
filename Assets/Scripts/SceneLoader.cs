@@ -4,10 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
-    public void LoadScene()
+    //Loads the next scene by index
+    //The index is found int the build settings
+    public void LoadSceneByIndex(int SceneIndex)
     {
-        SceneManager.LoadScene("Aiden Scene");
+        SceneManager.LoadScene(SceneIndex);
     }
+
+    //should hopefully quit the appication
+    //wont know until we have a build
     public void QuitGame()
     {
         Application.Quit();
