@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class DetectFloor : MonoBehaviour
 {
+    public GameObject target;
     public GameObject targetHitBox;
     private int detected = 0;
-    private DetectableHitBox target;
-    public void Start()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -29,7 +25,13 @@ public class DetectFloor : MonoBehaviour
         }
         if (detected < 1)
         {
-
+            PlayerOffFloor();
         }
+    }
+
+    private void PlayerOffFloor()
+    {
+        
+        target.transform.position = new Vector3(-8f, 14f, 0f);
     }
 }
