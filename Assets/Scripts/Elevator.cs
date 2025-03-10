@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Elevator : MonoBehaviour
 {
     public SpriteRenderer elevatorSprite; // Reference to the SpriteRenderer component of the elevator
     public Generator generator; // Reference to the Generator component
-
+    public int nextLevelIndex; // reference to the next level index
     
     
 
@@ -39,6 +40,11 @@ public class Elevator : MonoBehaviour
             if (generator.isPowered == true) 
             {
                 Debug.Log("Elevator moving to next level");
+
+                //changes the scene to the next level
+                SceneManager.LoadScene(nextLevelIndex);
+
+
             }
             else
             {
