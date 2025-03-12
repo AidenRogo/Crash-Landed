@@ -16,8 +16,10 @@ public class LockedDoor : MonoBehaviour
     private Vector3 originalPositionTopRight; // Original position for the top right sprite
     private Vector3 originalPositionBottomRight; // Original position for the bottom right sprite
 
-    private bool isOpen = false; // Flag to check if the door is open
+    public bool isOpen = false; // Flag to check if the door is open
     public bool isMoving = false; // Flag to check if the door is currently moving
+
+    private Coroutine currentCoroutine; // Reference to the current coroutine
 
     void Start()
     {
@@ -28,41 +30,51 @@ public class LockedDoor : MonoBehaviour
         originalPositionBottomRight = bottomRightSide.position;
     }
 
-    // Method to handle the button press
-    public void ButtonPressed()
+    public void OpenDoor()
     {
-        if (!isMoving)
+        if (currentCoroutine != null)
         {
-            if (!isOpen)
-            {
-                // Move the sprites by 1 unit either side
-                StartCoroutine(MoveSprite(topLeftSide, topLeftSide.position + new Vector3(-1, 0, 0)));
-                StartCoroutine(MoveSprite(bottomLeftSide, bottomLeftSide.position + new Vector3(-1, 0, 0)));
-                StartCoroutine(MoveSprite(topRightSide, topRightSide.position + new Vector3(1, 0, 0)));
-                StartCoroutine(MoveSprite(bottomRightSide, bottomRightSide.position + new Vector3(1, 0, 0)));
-            }
-            else
-            {
-                // Move the sprites back to their original positions
-                StartCoroutine(MoveSprite(topLeftSide, originalPositionTopLeft));
-                StartCoroutine(MoveSprite(bottomLeftSide, originalPositionBottomLeft));
-                StartCoroutine(MoveSprite(topRightSide, originalPositionTopRight));
-                StartCoroutine(MoveSprite(bottomRightSide, originalPositionBottomRight));
-            }
-            isOpen = !isOpen; // Toggle the isOpen flag
+            StopCoroutine(currentCoroutine);
         }
+        currentCoroutine = StartCoroutine(MoveDoor(true));
     }
 
-    // Coroutine to smoothly move a sprite to a target position
-    private IEnumerator MoveSprite(Transform sprite, Vector3 targetPosition)
+    public void CloseDoor()
     {
-        isMoving = true; // Set the isMoving flag to true
-        while (Vector3.Distance(sprite.position, targetPosition) > 0.01f)
+        if (currentCoroutine != null)
         {
-            sprite.position = Vector3.MoveTowards(sprite.position, targetPosition, moveSpeed * Time.deltaTime);
+            StopCoroutine(currentCoroutine);
+        }
+        currentCoroutine = StartCoroutine(MoveDoor(false));
+    }
+
+    private IEnumerator MoveDoor(bool opening)
+    {
+        isMoving = true;
+        Vector3 targetPositionTopLeft = opening ? originalPositionTopLeft + new Vector3(-1, 0, 0) : originalPositionTopLeft;
+        Vector3 targetPositionBottomLeft = opening ? originalPositionBottomLeft + new Vector3(-1, 0, 0) : originalPositionBottomLeft;
+        Vector3 targetPositionTopRight = opening ? originalPositionTopRight + new Vector3(1, 0, 0) : originalPositionTopRight;
+        Vector3 targetPositionBottomRight = opening ? originalPositionBottomRight + new Vector3(1, 0, 0) : originalPositionBottomRight;
+
+        while (Vector3.Distance(topLeftSide.position, targetPositionTopLeft) > 0.01f ||
+               Vector3.Distance(bottomLeftSide.position, targetPositionBottomLeft) > 0.01f ||
+               Vector3.Distance(topRightSide.position, targetPositionTopRight) > 0.01f ||
+               Vector3.Distance(bottomRightSide.position, targetPositionBottomRight) > 0.01f)
+        {
+            topLeftSide.position = Vector3.MoveTowards(topLeftSide.position, targetPositionTopLeft, moveSpeed * Time.deltaTime);
+            bottomLeftSide.position = Vector3.MoveTowards(bottomLeftSide.position, targetPositionBottomLeft, moveSpeed * Time.deltaTime);
+            topRightSide.position = Vector3.MoveTowards(topRightSide.position, targetPositionTopRight, moveSpeed * Time.deltaTime);
+            bottomRightSide.position = Vector3.MoveTowards(bottomRightSide.position, targetPositionBottomRight, moveSpeed * Time.deltaTime);
             yield return null;
         }
-        sprite.position = targetPosition; // Ensure the sprite reaches the target position
-        isMoving = false; // Set the isMoving flag to false
+
+        topLeftSide.position = targetPositionTopLeft;
+        bottomLeftSide.position = targetPositionBottomLeft;
+        topRightSide.position = targetPositionTopRight;
+        bottomRightSide.position = targetPositionBottomRight;
+
+        isOpen = opening;
+        isMoving = false;
+        currentCoroutine = null;
     }
 }

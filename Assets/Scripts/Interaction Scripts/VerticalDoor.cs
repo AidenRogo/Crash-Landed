@@ -4,69 +4,60 @@ using UnityEngine;
 
 public class VerticalLockedDoor : MonoBehaviour
 {
-    public float moveSpeed = 1f;
+    public Transform topSide; // Reference to the top sprite
+    public Transform bottomSide; // Reference to the bottom sprite
 
-//--------------------------------------------------------------------------------------------
-    // These reference all side of the door sprite
-    // These are the sprites that will move when the button is pressed
-    public Transform topSide;
-    public Transform bottomSide;
-    
-//----------------------------------------------------------------------------------------------------------
-// These allow the sprites to move back to their original positions when the button is pressed again
-    private Vector3 originalPositionTop; // Original position for the top left sprite
-    private Vector3 originalPositionBottom; // Original position for the bottom left sprite
-   
-    //-------------------------------------------------------------------------------------------------------
+    public float moveSpeed = 1f; // Speed of the door movement
 
-    private bool isOpen = false; // Flag to check if the door is open
-    public bool isMoving = false; // Flag to check if the door is moving
+    private Vector3 originalPositionTop; // Original position for the top sprite
+    private Vector3 originalPositionBottom; // Original position for the bottom sprite
 
-//--------------------------------------------------------------------------------------------
+    public bool isOpen = false; // Flag to check if the door is open
+    public bool isMoving = false; // Flag to check if the door is currently moving
+
     void Start()
     {
         // Store the original positions of the sprites
         originalPositionTop = topSide.position;
         originalPositionBottom = bottomSide.position;
-       
     }
 
-
-//--------------------------------------------------------------------------------------------
-    // Method to handle the button press
-   public void ButtonPressed()
+    public void OpenDoor()
     {
-        if(!isMoving)
+        if (!isMoving)
         {
-         
-        if (!isOpen)
-        {
-            // Move the sprites by 1 unit either side
-            StartCoroutine(MoveSprite(topSide, topSide.position + new Vector3(0, 1, 0)));
-            StartCoroutine(MoveSprite(bottomSide, bottomSide.position + new Vector3(0, -1, 0)));
-           
+            StopAllCoroutines();
+            StartCoroutine(MoveDoor(true));
         }
-        else
-        {
-            // Move the sprites back to their original positions
-            StartCoroutine(MoveSprite(topSide, originalPositionTop));
-            StartCoroutine(MoveSprite(bottomSide, originalPositionBottom));
-           
-        }
-        isOpen = !isOpen; // Toggle the isOpen flag
-    }
     }
 
-    // Coroutine to smoothly move a sprite to a target position
-    private IEnumerator MoveSprite(Transform sprite, Vector3 targetPosition)
+    public void CloseDoor()
     {
-        isMoving = true; // Set the isMoving flag to true
-        while (Vector3.Distance(sprite.position, targetPosition) > 0.01f)
+        if (!isMoving)
         {
-            sprite.position = Vector3.MoveTowards(sprite.position, targetPosition, moveSpeed * Time.deltaTime);
+            StopAllCoroutines();
+            StartCoroutine(MoveDoor(false));
+        }
+    }
+
+    private IEnumerator MoveDoor(bool opening)
+    {
+        isMoving = true;
+        Vector3 targetPositionTop = opening ? originalPositionTop + new Vector3(0, 1, 0) : originalPositionTop;
+        Vector3 targetPositionBottom = opening ? originalPositionBottom + new Vector3(0, -1, 0) : originalPositionBottom;
+
+        while (Vector3.Distance(topSide.position, targetPositionTop) > 0.01f ||
+               Vector3.Distance(bottomSide.position, targetPositionBottom) > 0.01f)
+        {
+            topSide.position = Vector3.MoveTowards(topSide.position, targetPositionTop, moveSpeed * Time.deltaTime);
+            bottomSide.position = Vector3.MoveTowards(bottomSide.position, targetPositionBottom, moveSpeed * Time.deltaTime);
             yield return null;
         }
-        sprite.position = targetPosition; // Ensure the sprite reaches the target position
-        isMoving = false; // Set the isMoving flag to false
+
+        topSide.position = targetPositionTop;
+        bottomSide.position = targetPositionBottom;
+
+        isOpen = opening;
+        isMoving = false;
     }
 }
