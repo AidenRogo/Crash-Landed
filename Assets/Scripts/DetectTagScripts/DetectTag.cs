@@ -2,36 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectFloor : MonoBehaviour
+public abstract class DetectTag : MonoBehaviour
 {
-    public GameObject target;
-    public GameObject targetHitBox;
+    public string targetTag;
     private int detected = 0;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(targetHitBox.tag))
+        if (other.CompareTag(targetTag))
         {
             detected++;
+            GotOnTarget();
         }
-
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag(targetHitBox.tag))
+        if (other.CompareTag(targetTag))
         {
             detected--;
         }
         if (detected < 1)
         {
-            PlayerOffFloor();
+            GotOffTarget();
         }
     }
+    abstract public void GotOnTarget();
 
-    private void PlayerOffFloor()
-    {
-        
-        target.transform.position = new Vector3(-8f, 14f, 0f);
-    }
+    abstract public void GotOffTarget();
+
+    //parent.transform.position = new Vector3(-8f, 14f, 0f);
 }
