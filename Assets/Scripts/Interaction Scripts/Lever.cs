@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LockedDoorButton : MonoBehaviour
+/*public class LockedDoorButton : MonoBehaviour
 {
     public LockedDoor lockedDoor; // Reference to the LockedDoor component
     public VerticalLockedDoor verticalLockedDoor; // Reference to the VerticalLockedDoor component
@@ -19,7 +19,7 @@ public class LockedDoorButton : MonoBehaviour
     // Method to detect collision with the player
     void OnTriggerEnter2D(Collider2D other) // Ensure that the collision is 2D
     {
-        if (other.CompareTag("Player")) // Check if object colliding with the button is tagged with "Player"
+        if (other.CompareTag("Wrench")) // Check if object colliding with the button is tagged with "Player"
         {
             Debug.Log("Button pressed"); // Log in console that the button was pressed
             if (lockedDoor != null) // Runs the function if the door is not null
@@ -37,7 +37,7 @@ public class LockedDoorButton : MonoBehaviour
         }
     }
 }
-
+*/
 public class Lever : MonoBehaviour
 {
     public LockedDoor lockedDoor; // Reference to the LockedDoor component
@@ -55,7 +55,7 @@ public class Lever : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) // Check if the player collides with the lever
+        if (other.CompareTag("Wrench")) // Check if the player collides with the lever
         {
             isFlipped = !isFlipped; // Toggle the lever state
             if (lockedDoor != null) // Runs the function if the door is not null
