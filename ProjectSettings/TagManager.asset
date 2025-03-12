@@ -8,6 +8,7 @@ TagManager:
   - Box
   - Fuse
   - PlayerFloorCollider
+  - Wrench
   layers:
   - Default
   - TransparentFX
