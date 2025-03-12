@@ -16,11 +16,11 @@ public class NewMappingMovement : MonoBehaviour
 
     }
 
-private void FixedUpdate()
-{
-        _rigidbody.velocity = _movementInput * _speed;
+    private void FixedUpdate()
+    {
+            _rigidbody.velocity = _movementInput * _speed;
 
-}
+    }
 
     private void OnMove(InputValue inputValue)
     {
