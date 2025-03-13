@@ -24,11 +24,11 @@ public class LockedDoorButton : MonoBehaviour
             Debug.Log("Button pressed"); // Log in console that the button was pressed
             if (lockedDoor != null) // Runs the function if the door is not null
             {
-                lockedDoor.ButtonPressed(); // Call the ButtonPressed method in the LockedDoor script
+                lockedDoor.OpenDoor(); // Call the ButtonPressed method in the LockedDoor script
             }
             else if (verticalLockedDoor != null) // Runs the function if the vertical door is not null
             {
-                verticalLockedDoor.ButtonPressed(); // Call the ButtonPressed method in the VerticalLockedDoor script
+                verticalLockedDoor.OpenDoor(); // Call the ButtonPressed method in the VerticalLockedDoor script
             }
             else
             {
