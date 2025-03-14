@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 99d2886743c3e904bb9867614a6f22e1
   - enabled: 1
+    path: Assets/Scenes/Test Demo.unity
+    guid: 2a7c9547e32c29741929c28b131fb116
+  - enabled: 1
+    path: Assets/Scenes/Temp.unity
+    guid: 8475b66f44aa8e94ca70faa8eeec7fb0
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 3bd6ed5a670bbc4469d9beda4cdfbb1e
   m_configObjects: {}

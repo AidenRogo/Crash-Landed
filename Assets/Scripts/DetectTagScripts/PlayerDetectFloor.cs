@@ -6,6 +6,7 @@ public class PlayerDetectFloor : DetectTag
 {
     public GameObject parent;
     private Vector3 originalPosition;
+    private bool isOnPressurePlate = false;
 
     private void Start()
     {
@@ -14,11 +15,34 @@ public class PlayerDetectFloor : DetectTag
 
     public override void GotOffTarget()
     {
-        parent.transform.position = originalPosition;
+        if (!isOnPressurePlate)
+        {
+            parent.transform.position = originalPosition;
+        }
     }
 
     public override void GotOnTarget()
     {
-        
+        // Additional logic for when the player gets on the target can be added here
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PressurePlate"))
+        {
+            isOnPressurePlate = true;
+        }
+        else if (other.CompareTag("Pit"))
+        {
+            parent.transform.position = originalPosition;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("PressurePlate"))
+        {
+            isOnPressurePlate = false;
+        }
     }
 }

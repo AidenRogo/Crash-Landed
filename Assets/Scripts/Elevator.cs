@@ -1,3 +1,4 @@
+//Author: Aiden Rogowski
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Elevator : MonoBehaviour
 {
+
+//Declare variables
     public SpriteRenderer elevatorSprite; // Reference to the SpriteRenderer component of the elevator
     public Generator generator; // Reference to the Generator component
     public int nextLevelIndex; // reference to the next level index
@@ -12,9 +15,9 @@ public class Elevator : MonoBehaviour
     
 
 
-    public void GeneratorPowered()
+    public void GeneratorPowered() //Called when the generator is powered, allowing you to progress to the next level
     {
-        Debug.Log("Level is Complete!");
+        Debug.Log("Level is Complete!"); //Debug
 
         if (elevatorSprite != null)
         {
@@ -41,14 +44,14 @@ public class Elevator : MonoBehaviour
             {
                 Debug.Log("Elevator moving to next level");
 
-                //changes the scene to the next level
+                //changes the scene to the next level in the index
                 SceneManager.LoadScene(nextLevelIndex);
 
 
             }
             else
             {
-                Debug.Log("Generator is not powered.");
+                Debug.Log("Generator is not powered."); // Won't move to the next level if the generator is not powered
             }
         }
     }
