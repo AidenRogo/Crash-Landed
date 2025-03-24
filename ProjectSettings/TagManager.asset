@@ -9,6 +9,8 @@ TagManager:
   - Fuse
   - PlayerFloorCollider
   - Wrench
+  - PressurePlate
+  - Pit
   layers:
   - Default
   - TransparentFX

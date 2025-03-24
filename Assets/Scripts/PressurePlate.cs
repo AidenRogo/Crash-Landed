@@ -8,7 +8,7 @@ public class PressurePlate : MonoBehaviour
     public VerticalLockedDoor verticalDoor; // Reference to the VerticalLockedDoor component
     public float closeDelay = 3f; // Time in seconds to wait before closing the door
 
-    private int objectsOnPlate = 0; // Counter for objects on the pressure plate
+    private int objectsOnPlate = 0; // Counter for number of objects on the pressure plate
     private Coroutine closeCoroutine; // Reference to the close coroutine
 
     void Start()
@@ -24,7 +24,7 @@ public class PressurePlate : MonoBehaviour
     {
         if (other.CompareTag("Player") || other.CompareTag("Box")) // Check if object colliding with the pressure plate is tagged with "Player" or "Box"
         {
-            objectsOnPlate++;
+            objectsOnPlate++; // increase the number of objects on the plate
             if (objectsOnPlate == 1) // Only open the door if this is the first object on the plate
             {
                 if (closeCoroutine != null)
