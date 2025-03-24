@@ -30,6 +30,4 @@ public abstract class DetectTag : MonoBehaviour
     abstract public void GotOnTarget();
 
     abstract public void GotOffTarget();
-
-    //parent.transform.position = new Vector3(-8f, 14f, 0f);
 }
