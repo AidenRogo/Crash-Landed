@@ -22,7 +22,7 @@ public class PressurePlate : MonoBehaviour
     // Method to detect collision with the player or box
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Box")) // Check if object colliding with the pressure plate is tagged with "Player" or "Box"
+        if (other.CompareTag("Player") || other.CompareTag("Box") || other.CompareTag("Fuse")) // Check if object colliding with the pressure plate is tagged with "Player" or "Box"
         {
             objectsOnPlate++; // increase the number of objects on the plate
             if (objectsOnPlate == 1) // Only open the door if this is the first object on the plate
