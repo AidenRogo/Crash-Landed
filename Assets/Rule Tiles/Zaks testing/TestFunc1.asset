@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TestFunc1
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: -1248969769, guid: 55f1672be6d89d440922e3037c65c5a9, type: 3}
-  m_DefaultGameObject: {fileID: 6867535471621939730, guid: 303e0916833c20143924d7229418229d, type: 3}
+  m_DefaultGameObject: {fileID: 6867535471621939730, guid: 6c2f54cf4cc34cb40824c45c75cef069, type: 3}
   m_DefaultColliderType: 1
   m_TilingRules: []
