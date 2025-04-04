@@ -61,10 +61,10 @@ public class swingSword : MonoBehaviour
         isSwinging = true;
         yield return new WaitForSeconds(.5f);
         wrenchHitBox.SetActive(true);
-        visualHitBox.SetActive(true);
+       // visualHitBox.SetActive(true);
         yield return new WaitForSeconds(.5f);
         wrenchHitBox.SetActive(false);
-        visualHitBox.SetActive(false);
+      //  visualHitBox.SetActive(false);
         isSwinging=false;
     }
 }

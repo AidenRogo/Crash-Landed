@@ -11,6 +11,10 @@ public class PressurePlate : MonoBehaviour
     private int objectsOnPlate = 0; // Counter for number of objects on the pressure plate
     private Coroutine closeCoroutine; // Reference to the close coroutine
 
+    public Animator animator; // Reference to the Animator component
+
+
+
     void Start()
     {
         if (lockedDoor == null && verticalDoor == null)
@@ -26,6 +30,8 @@ public class PressurePlate : MonoBehaviour
         {
             objectsOnPlate++; // increase the number of objects on the plate
             if (objectsOnPlate == 1) // Only open the door if this is the first object on the plate
+
+            animator.SetBool("Pressed",true); //Run the animation for the pressure plate turning on.
             {
                 if (closeCoroutine != null)
                 {
@@ -50,6 +56,7 @@ public class PressurePlate : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag("Box")) // Check if object leaving the pressure plate is tagged with "Player" or "Box"
         {
             objectsOnPlate--;
+            animator.SetBool("Pressed",false); //Run the animation for the pressure plate turning off.
             if (objectsOnPlate == 0) // Only start the close timer if there are no objects left on the plate
             {
                 closeCoroutine = StartCoroutine(CloseDoorAfterDelay());
