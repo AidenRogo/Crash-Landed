@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     Vector2 moveDirection = Vector2.zero;
     private InputAction move;
     private bool isPushing;
-    public int currRotateDegree;
 
     //Wrench
     public GameObject wrenchHitBox;
@@ -33,7 +32,6 @@ public class PlayerController : MonoBehaviour
         isPushing = false;
         wrenchHitBox.SetActive(false);
         CharacterAnimator.SetBool("FaceFront", true);
-        currRotateDegree = 0;
 
     }
     private void Awake()
