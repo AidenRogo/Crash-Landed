@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: 8ee2ff3df982e21498e42c13bebe52ba
+guid: 6fa10887aaadb8c44940184a9a27d65a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - newSprite: {instanceID: 0}
-  - wrenchHitBox: {instanceID: 0}
-  - visualHitBox: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
