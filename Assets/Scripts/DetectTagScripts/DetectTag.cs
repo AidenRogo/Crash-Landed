@@ -21,15 +21,14 @@ public abstract class DetectTag : MonoBehaviour
         if (other.CompareTag(targetTag))
         {
             detected--;
+                if (detected < 1)
+                {
+                    GotOffTarget();
+                }
         }
-        if (detected < 1)
-        {
-            GotOffTarget();
-        }
+        
     }
     abstract public void GotOnTarget();
 
     abstract public void GotOffTarget();
-
-    //parent.transform.position = new Vector3(-8f, 14f, 0f);
 }
