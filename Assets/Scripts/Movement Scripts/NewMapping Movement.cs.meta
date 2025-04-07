@@ -3,7 +3,10 @@ guid: 8ee2ff3df982e21498e42c13bebe52ba
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - newSprite: {instanceID: 0}
+  - wrenchHitBox: {instanceID: 0}
+  - visualHitBox: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
