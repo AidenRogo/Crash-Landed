@@ -293,6 +293,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a94e0262c5b69d4eac1a0510e2cd52f, type: 3}
+--- !u!114 &1066980973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7020650120816588831, guid: 22275e7daf3adf045b83f6c62381b9d2, type: 3}
+  m_PrefabInstance: {fileID: 1107639468}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7997473bf60f7e4581758807a80e3d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1107639468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -341,6 +352,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7020650120816588831, guid: 22275e7daf3adf045b83f6c62381b9d2, type: 3}
+      propertyPath: generator
+      value: 
+      objectReference: {fileID: 1777997195}
     - target: {fileID: 9017307027709703470, guid: 22275e7daf3adf045b83f6c62381b9d2, type: 3}
       propertyPath: m_Name
       value: Elevator
@@ -407,6 +422,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35952a52345cbf7499ff21353ccf6bfd, type: 3}
+--- !u!114 &1777997195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3244175942865561872, guid: a755571923d754c42b3f83c31a9146d0, type: 3}
+  m_PrefabInstance: {fileID: 2135459803}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6521619c35f0bcc48bad56808d08ad73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2135459803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -419,6 +445,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Generator
       objectReference: {fileID: 0}
+    - target: {fileID: 3244175942865561872, guid: a755571923d754c42b3f83c31a9146d0, type: 3}
+      propertyPath: Elevator
+      value: 
+      objectReference: {fileID: 1066980973}
     - target: {fileID: 6633946985478636905, guid: a755571923d754c42b3f83c31a9146d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.5
