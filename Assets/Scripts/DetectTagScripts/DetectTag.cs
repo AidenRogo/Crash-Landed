@@ -21,10 +21,11 @@ public abstract class DetectTag : MonoBehaviour
         if (other.CompareTag(targetTag))
         {
             detected--;
-                if (detected < 1)
-                {
-                    GotOffTarget();
-                }
+
+            if (detected < 1)
+            {
+                GotOffTarget();
+            }
         }
         
     }
