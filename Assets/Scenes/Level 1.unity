@@ -567,34 +567,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pressure Plate
       objectReference: {fileID: 0}
-    - target: {fileID: 4663934883261401615, guid: e5717b624367d644580181e68d82362c, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4663934883261401615, guid: e5717b624367d644580181e68d82362c, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4663934883261401615, guid: e5717b624367d644580181e68d82362c, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4663934883261401615, guid: e5717b624367d644580181e68d82362c, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4663934883261401615, guid: e5717b624367d644580181e68d82362c, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4663934883261401615, guid: e5717b624367d644580181e68d82362c, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4663934883261401615, guid: e5717b624367d644580181e68d82362c, type: 3}
-      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7562017863401843095, guid: e5717b624367d644580181e68d82362c, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
