@@ -95,7 +95,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockedDoor: {fileID: 0}
   verticalDoor: {fileID: 0}
-  closeDelay: 3
+  closeDelay: 0.5
+  animator: {fileID: 1527453212062736687}
 --- !u!95 &1527453212062736687
 Animator:
   serializedVersion: 5
