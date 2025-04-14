@@ -43,9 +43,12 @@ public class VerticalLockedDoor : MonoBehaviour
     private IEnumerator MoveDoor(bool opening)
     {
         isMoving = true;
-        Vector3 targetPositionTop = opening ? originalPositionTop + new Vector3(0, 1, 0) : originalPositionTop;
-        Vector3 targetPositionBottom = opening ? originalPositionBottom + new Vector3(0, -1, 0) : originalPositionBottom;
 
+        // Adjust the target positions
+        Vector3 targetPositionTop = opening ? originalPositionTop + new Vector3(0, 1, 0) : originalPositionTop;
+        Vector3 targetPositionBottom = opening ? originalPositionBottom + new Vector3(0, -1.5f, 0) : originalPositionBottom;
+
+        // Move the door parts until they reach their target positions
         while (Vector3.Distance(topSide.position, targetPositionTop) > 0.01f ||
                Vector3.Distance(bottomSide.position, targetPositionBottom) > 0.01f)
         {
@@ -54,6 +57,7 @@ public class VerticalLockedDoor : MonoBehaviour
             yield return null;
         }
 
+        // Snap to the final positions
         topSide.position = targetPositionTop;
         bottomSide.position = targetPositionBottom;
 
