@@ -1570,7 +1570,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 348223320803436024, guid: 35952a52345cbf7499ff21353ccf6bfd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5
+      value: -1.75
       objectReference: {fileID: 0}
     - target: {fileID: 348223320803436024, guid: 35952a52345cbf7499ff21353ccf6bfd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1611,10 +1611,6 @@ PrefabInstance:
     - target: {fileID: 7472996734070330162, guid: 35952a52345cbf7499ff21353ccf6bfd, type: 3}
       propertyPath: m_Name
       value: Fuse
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472996734070330162, guid: 35952a52345cbf7499ff21353ccf6bfd, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3526,17 +3522,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player v1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8474293307418773530, guid: 00f5e1d7d779e5f4eaf093e34742aad7, type: 3}
-      propertyPath: moveSpeed
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778138114000628380, guid: 00f5e1d7d779e5f4eaf093e34742aad7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8991834803534841799, guid: 00f5e1d7d779e5f4eaf093e34742aad7, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00f5e1d7d779e5f4eaf093e34742aad7, type: 3}
@@ -32182,18 +32169,6 @@ PrefabInstance:
     - target: {fileID: 1436005916613925761, guid: 53a54904ca0b036498c3a1de08e99c1b, type: 3}
       propertyPath: m_Name
       value: Box 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467209089441219452, guid: 53a54904ca0b036498c3a1de08e99c1b, type: 3}
-      propertyPath: m_Mass
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4966480207523873852, guid: 53a54904ca0b036498c3a1de08e99c1b, type: 3}
-      propertyPath: m_Size.y
-      value: 0.7695446
-      objectReference: {fileID: 0}
-    - target: {fileID: 4966480207523873852, guid: 53a54904ca0b036498c3a1de08e99c1b, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.0025424957
       objectReference: {fileID: 0}
     - target: {fileID: 5747797786370633449, guid: 53a54904ca0b036498c3a1de08e99c1b, type: 3}
       propertyPath: m_LocalPosition.x
