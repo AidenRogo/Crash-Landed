@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ff49d9c6bb5380f4b98f8eaa45691cac
+guid: 3ee085c9ed6479949b1cf1b462ba5cd9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,16 +106,50 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Aiden Lower Wall_0
+      name: ELEVATOR-(real)-open_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f833157ce110f1438728e7f8dfe1a44
+      internalID: 890637150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ELEVATOR-(real)-open_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 64
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,71 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cb13baf02b8a8741b049cf7e8ebffe8
-      internalID: 1679938815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aiden Lower Wall_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 452f146e9cd5443499516152845411a1
-      internalID: -333987528
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aiden Lower Wall_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 247409435c9b1c749a43f590204ae36e
-      internalID: -198463504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aiden Lower Wall_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f2af9d6a091e4c41a93197967997ac5
-      internalID: -2024872630
+      spriteID: 72e55c49437f5bb4f9083bd5700632e0
+      internalID: -682427797
       vertices: []
       indices: 
       edges: []
@@ -204,10 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Aiden Lower Wall_0: 1679938815
-      Aiden Lower Wall_1: -333987528
-      Aiden Lower Wall_2: -198463504
-      Aiden Lower Wall_3: -2024872630
+      ELEVATOR-(real)-open_0: 890637150
+      ELEVATOR-(real)-open_1: -682427797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
