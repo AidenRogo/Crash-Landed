@@ -14,14 +14,13 @@ public class WireChangeColor : MonoBehaviour
         wires = GetComponent<Tilemap>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TurnOn()
     {
-        
+        wires.color = color;
     }
 
-    public void ChangeColor()
+    public void TurnOff()
     {
-
+        wires.color = Color.black;
     }
 }
