@@ -12,6 +12,7 @@ TagManager:
   - PressurePlate
   - Pit
   - CameraTarget
+  - Void
   layers:
   - Default
   - TransparentFX
