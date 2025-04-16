@@ -17,10 +17,12 @@ public class WireChangeColor : MonoBehaviour
     public void TurnOn()
     {
         wires.color = color;
+        Debug.Log("test222");
     }
 
     public void TurnOff()
     {
         wires.color = Color.black;
+        Debug.Log("test333");
     }
 }
