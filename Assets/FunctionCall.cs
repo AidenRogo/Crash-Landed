@@ -19,6 +19,6 @@ public class FunctionCall : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        WireChangeColor.ChangeColor();
+       // WireChangeColor.ChangeColor();
     }
 }
