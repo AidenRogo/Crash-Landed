@@ -4,15 +4,15 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class FunctionCall : MonoBehaviour
+public class CallWireColorChange : MonoBehaviour
 {
-    public Tilemap layer;
-    private WireChangeColor script;
+    public GameObject WireSet;
+    private WireSetScript script;
     
     // Start is called before the first frame update
     void Start()
     {
-        script = layer.GetComponent<WireChangeColor>();
+        script = WireSet.GetComponent<WireSetScript>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
