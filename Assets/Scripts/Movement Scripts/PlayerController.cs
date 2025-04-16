@@ -129,28 +129,28 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (CharacterAnimator.GetBool("FaceFront"))
         {
-            wrenchHitBox.transform.position = rb.transform.position +  new Vector3(0,-1,0);
+            wrenchHitBox.transform.position = rb.transform.position +  new Vector3(0,-.4f,0);
             wrenchHitBox.transform.eulerAngles = Vector3.forward * 180;
             wrenchHitBox.SetActive(true);
 
         }
         if (CharacterAnimator.GetBool("FaceBack"))
         {
-            wrenchHitBox.transform.position = rb.transform.position + new Vector3(0, 1, 0);
+            wrenchHitBox.transform.position = rb.transform.position + new Vector3(0, .4f, 0);
             wrenchHitBox.transform.eulerAngles = Vector3.forward * 0;
 
             wrenchHitBox.SetActive(true);
         }
         if (CharacterAnimator.GetBool("FaceLeft"))
         {
-            wrenchHitBox.transform.position = rb.transform.position + new Vector3(-1, 0, 0);
+            wrenchHitBox.transform.position = rb.transform.position + new Vector3(-.4f, 0, 0);
             wrenchHitBox.transform.eulerAngles = Vector3.forward * 90;
 
             wrenchHitBox.SetActive(true);
         }
         if (CharacterAnimator.GetBool("FaceRight"))
         {
-            wrenchHitBox.transform.position = rb.transform.position + new Vector3(1, 0, 0);
+            wrenchHitBox.transform.position = rb.transform.position + new Vector3(.4f, 0, 0);
             wrenchHitBox.transform.eulerAngles = Vector3.forward * -90;
 
             wrenchHitBox.SetActive(true);
