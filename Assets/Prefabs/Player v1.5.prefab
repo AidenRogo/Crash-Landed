@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterAnimator: {fileID: 411246296273606919}
   rb: {fileID: 1597090524008758865}
-  moveSpeed: 3.5
+  moveSpeed: 5
   wrenchHitBox: {fileID: 8778138114000628380}
 --- !u!95 &411246296273606919
 Animator:
@@ -484,8 +484,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5623124787139157161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70bf3cdbab4d38d498f4ab00e0ecaa37, type: 3}
+  m_Script: {fileID: 11500000, guid: 269eaebae7b584c44acce2a8998cfb2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Floor
   parent: {fileID: 7329556543515413449}
