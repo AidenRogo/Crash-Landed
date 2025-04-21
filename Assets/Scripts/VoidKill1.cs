@@ -13,6 +13,8 @@ public class VoidKill1 : MonoBehaviour
     private float time2;
 
 
+    public PlayerController controller;
+
     private Renderer rend;
 
     // Color value that we can set in Inspector
@@ -24,6 +26,7 @@ public class VoidKill1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        OriginalSize = transform.localScale;
         originalPosition = parent.transform.position;
     }
 
@@ -42,12 +45,16 @@ public class VoidKill1 : MonoBehaviour
         StartCoroutine(Shrink());
 
     
-    parent.transform.position = originalPosition;
+   // parent.transform.position = originalPosition;
         }
     }
     private IEnumerator Shrink()
     {
         time2 = 0;
+
+        yield return new WaitForSeconds(0.2f);
+        controller.move.Disable();
+        
 
         while (transform.localScale.x > 0.01f && transform.localScale.y > 0.01f)
         {
@@ -60,6 +67,12 @@ public class VoidKill1 : MonoBehaviour
             Debug.Log("Scale Change");
             yield return null;
         }
+        yield return new WaitForSeconds(0.2f);
+        transform.localScale = OriginalSize;
+        rend.material.color = Color.white;
         parent.transform.position = originalPosition;
+        yield return new WaitForSeconds(1f);
+        controller.move.Enable();
     }
+   
 }

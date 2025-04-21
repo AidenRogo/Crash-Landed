@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public float moveSpeed = 5f;
     Vector2 moveDirection = Vector2.zero;
-    private InputAction move;
+    public InputAction move;
     private bool isPushing;
 
     //Wrench
