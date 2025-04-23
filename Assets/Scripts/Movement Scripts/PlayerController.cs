@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class PlayerController : MonoBehaviour
     private InputAction fire;
     private bool isSwinging;
 
+    //Cutscene
+    //public bool wantCutscene;
 
 
 
@@ -32,6 +35,10 @@ public class PlayerController : MonoBehaviour
         isPushing = false;
         wrenchHitBox.SetActive(false);
         CharacterAnimator.SetBool("FaceFront", true);
+        /*if (wantCutscene)
+        {
+            startCutscene();
+        }*/
 
     }
     private void Awake()
@@ -126,7 +133,7 @@ public class PlayerController : MonoBehaviour
 
         isSwinging = true;
         CharacterAnimator.SetBool("isSwinging", isSwinging);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.333f);
         if (CharacterAnimator.GetBool("FaceFront"))
         {
             wrenchHitBox.transform.position = rb.transform.position +  new Vector3(0,-.4f,0);
@@ -135,7 +142,7 @@ public class PlayerController : MonoBehaviour
 
         }
         if (CharacterAnimator.GetBool("FaceBack"))
-        {
+        { 
             wrenchHitBox.transform.position = rb.transform.position + new Vector3(0, .4f, 0);
             wrenchHitBox.transform.eulerAngles = Vector3.forward * 0;
 
@@ -157,7 +164,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         isSwinging = false;
         CharacterAnimator.SetBool("isSwinging", isSwinging);
         wrenchHitBox.SetActive(false);
@@ -169,7 +176,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) // Ensure that the collision is 2D
     {
-        if (other.gameObject.CompareTag("Box") || other.gameObject.CompareTag("Fuse"))
+        if ((other.gameObject.CompareTag("Box") || other.gameObject.CompareTag("Fuse")))
         {
             Debug.Log("Is Pushing");
 
@@ -178,11 +185,18 @@ public class PlayerController : MonoBehaviour
             
         }
     }
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if ((other.gameObject.CompareTag("Box") || other.gameObject.CompareTag("Fuse")))
+        {
+            CharacterAnimator.SetFloat("ObjSpeed", other.rigidbody.velocity.magnitude);
+        }
 
+    }
     void OnCollisionExit2D(Collision2D other)
     {
 
-        if (other.gameObject.CompareTag("Box") || other.gameObject.CompareTag("Fuse"))
+        if ((other.gameObject.CompareTag("Box") || other.gameObject.CompareTag("Fuse")))
         {
             Debug.Log("Not Pushing");
 
@@ -190,4 +204,6 @@ public class PlayerController : MonoBehaviour
             CharacterAnimator.SetBool("isPushing", isPushing);
         }
     }
+
+    
 }
