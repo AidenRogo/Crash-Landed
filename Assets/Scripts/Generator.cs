@@ -5,7 +5,7 @@ using UnityEngine;
 public class Generator : MonoBehaviour
 {
     public bool isPowered = false; // Flag to check if the generator is powered
-    public Elevator Elevator; // Reference to the Elevator component
+    public EndElevator elevator; // Reference to the Elevator component
     private Animator animator; // Reference to the Animator component
 
     // Start is called before the first frame update
@@ -27,7 +27,7 @@ public class Generator : MonoBehaviour
             Debug.Log("Fuse has Collided with Generator");
            
             isPowered = true; // Toggle the isPowered flag
-            Elevator.GeneratorPowered(); // Call the GeneratorPowered method in the Elevator script
+            elevator.GeneratorPowered(); // Call the GeneratorPowered method in the Elevator script
 
             animator.SetTrigger("PowerOn"); // Trigger the "PowerOn" animation
             Destroy(other.gameObject); // Destroy the fuse GameObject
