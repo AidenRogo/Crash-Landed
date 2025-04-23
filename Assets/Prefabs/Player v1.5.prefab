@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterAnimator: {fileID: 411246296273606919}
   rb: {fileID: 1597090524008758865}
-  moveSpeed: 5
+  moveSpeed: 3.5
   wrenchHitBox: {fileID: 8778138114000628380}
 --- !u!95 &411246296273606919
 Animator:
@@ -337,7 +337,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 6d6f0daa21950ac4198655056b322f4f, type: 3}
-  m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
+  m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

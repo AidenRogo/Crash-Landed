@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 
 public class PlayerController : MonoBehaviour
 {
@@ -175,7 +176,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) // Ensure that the collision is 2D
     {
-        if (other.gameObject.CompareTag("Box") || other.gameObject.CompareTag("Fuse"))
+        if ((other.gameObject.CompareTag("Box") || other.gameObject.CompareTag("Fuse")))
         {
             Debug.Log("Is Pushing");
 
@@ -184,11 +185,18 @@ public class PlayerController : MonoBehaviour
             
         }
     }
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if ((other.gameObject.CompareTag("Box") || other.gameObject.CompareTag("Fuse")))
+        {
+            CharacterAnimator.SetFloat("ObjSpeed", other.rigidbody.velocity.magnitude);
+        }
 
+    }
     void OnCollisionExit2D(Collision2D other)
     {
 
-        if (other.gameObject.CompareTag("Box") || other.gameObject.CompareTag("Fuse"))
+        if ((other.gameObject.CompareTag("Box") || other.gameObject.CompareTag("Fuse")))
         {
             Debug.Log("Not Pushing");
 
