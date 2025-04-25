@@ -53,8 +53,10 @@ public class VoidKill1 : MonoBehaviour
         time2 = 0;
 
         yield return new WaitForSeconds(0.2f);
-        controller.move.Disable();
-        
+        if (parent.CompareTag("Player"))
+        {
+            controller.move.Disable();
+        }
 
         while (transform.localScale.x > 0.01f && transform.localScale.y > 0.01f)
         {
