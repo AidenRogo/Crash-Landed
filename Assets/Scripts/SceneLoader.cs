@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
@@ -14,6 +15,21 @@ public class SceneLoader : MonoBehaviour
     {
        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + SceneIndex));
     }
+
+    public void blah(InputAction.CallbackContext context)
+    {
+
+        if (context.performed)
+        {
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
+            Debug.Log("Blah");
+        }
+       
+
+      
+    }
+
+
 
     IEnumerator LoadLevel(int levelIndex){
         //play the transition animation
