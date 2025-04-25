@@ -62,10 +62,12 @@ public class Lever : MonoBehaviour
             {
                 if (isFlipped)
                 {
+                    transform.Rotate(0, 0, 180); // Rotate the lever to indicate it is flipped
                     lockedDoor.OpenDoor(); // Call the OpenDoor method in the LockedDoor script
                 }
                 else
                 {
+                    transform.Rotate(0, 0, -180); // Rotate the lever back to its original position
                     lockedDoor.CloseDoor(); // Call the CloseDoor method in the LockedDoor script
                 }
             }
@@ -73,10 +75,12 @@ public class Lever : MonoBehaviour
             {
                 if (isFlipped)
                 {
+                    transform.Rotate(0, 0, 180); // Rotate the lever to indicate it is flipped
                     verticalLockedDoor.OpenDoor(); // Call the OpenDoor method in the VerticalLockedDoor script
                 }
                 else
                 {
+                    transform.Rotate(0, 0, -180); // Rotate the lever back to its original position
                     verticalLockedDoor.CloseDoor(); // Call the CloseDoor method in the VerticalLockedDoor script
                 }
             }
