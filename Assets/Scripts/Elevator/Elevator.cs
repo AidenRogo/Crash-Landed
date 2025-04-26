@@ -11,18 +11,28 @@ public class Elevator : MonoBehaviour
     public SpriteRenderer elevatorSprite; // Reference to the SpriteRenderer component of the elevator
     public Generator generator; // Reference to the Generator component
     public int nextLevelIndex; // reference to the next level index
-    
-    
+    public Animator ElevetorAnimator;
+    public BoxCollider2D myCollider;
+
+
+    private void Start()
+    {
+        //BoxCollider2D myCollider = GetComponent<BoxCollider2D>();
+        myCollider.isTrigger = false;
+    }
 
 
     public void GeneratorPowered() //Called when the generator is powered, allowing you to progress to the next level
     {
+
         Debug.Log("Level is Complete!"); //Debug
+        ElevetorAnimator.SetBool("isPowered", true);
+        myCollider.isTrigger = true;
 
         if (elevatorSprite != null)
         {
             // Change the color of the elevator sprite
-            elevatorSprite.color = Color.green; // Change to green or any other color you prefer
+            //elevatorSprite.color = Color.green; // Change to green or any other color you prefer
            
         }
         else

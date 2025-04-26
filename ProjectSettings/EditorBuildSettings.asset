@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/A Main Menu.unity
+    guid: 64435931f6be2af4881ad25420e4468a
+  - enabled: 0
     path: Assets/Scenes/Main Menu.unity
     guid: 99d2886743c3e904bb9867614a6f22e1
   - enabled: 1
@@ -29,4 +32,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: 3bd6ed5a670bbc4469d9beda4cdfbb1e
+  - enabled: 1
+    path: Assets/Scenes/Finished Levels/Backtrack Level.unity
+    guid: fcb5287d73831e44c96ababc4805c997
   m_configObjects: {}
