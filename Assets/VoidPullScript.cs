@@ -14,7 +14,7 @@ public class VoidPullScript : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            spring.connectedBody = collision.GetComponentInParent<Rigidbody2D>();
+            //spring.connectedBody = collision.GetComponentInParent<Rigidbody2D>();
         }
     }
 }
