@@ -9,7 +9,7 @@ public class VoidKill : MonoBehaviour
     [SerializeField]
     private Color colorToTurnTo = Color.black;
 
-    public float shrinkSpeed = 4.0f;
+    public float shrinkSpeed = 3.5f;
     private float time = 0;
     private Vector3 spawnPoint;
 
@@ -58,7 +58,7 @@ public class VoidKill : MonoBehaviour
         spriteRenderer.material.color = Color.white;
         float dist = Vector3.Distance(spawnPoint, transform.position);
         transform.position = spawnPoint;
-        yield return new WaitForSeconds(dist * 0.18f);
+        yield return new WaitForSeconds(dist * 0.12f);
         controller.move.Enable();
     }
    
