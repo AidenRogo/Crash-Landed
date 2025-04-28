@@ -27,7 +27,6 @@ public class VoidKill : MonoBehaviour
     private Vector3 spawnPoint;
 
 
-
     void Start()
     {
         spawnPoint = transform.position;
