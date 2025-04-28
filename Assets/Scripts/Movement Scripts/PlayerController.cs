@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
     private InputAction fire;
     private bool isSwinging;
 
+    //Annoyed of wrench making off button
+    public bool wrenchOn = true;
+
     //Cutscene
     //public bool wantCutscene;
 
@@ -118,7 +121,7 @@ public class PlayerController : MonoBehaviour
     //Left click calls this function
     private void Fire(InputAction.CallbackContext context)
     {
-        if (!isSwinging)
+        if (!isSwinging && wrenchOn)
         {
             Debug.Log("Swung Wrench");
             StartCoroutine(Swing());
