@@ -183,7 +183,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 30
   m_Sprite: {fileID: 21300000, guid: 991471755bb25a1468c6d09e72caf71f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -240,6 +240,15 @@ MonoBehaviour:
   CharacterAnimator: {fileID: 411246296273606919}
   rb: {fileID: 1597090524008758865}
   moveSpeed: 3.5
+  move:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f44a14cd-3ef1-438c-b201-3533c520e782
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   wrenchHitBox: {fileID: 8778138114000628380}
 --- !u!95 &411246296273606919
 Animator:

@@ -222,6 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1063086685608281893}
   - component: {fileID: 3286005337815669546}
+  - component: {fileID: 3201936747686029428}
   m_Layer: 0
   m_Name: Level Transition
   m_TagString: Untagged
@@ -259,3 +260,101 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Transition: {fileID: 5715723554696778803}
   transitionTime: 2
+--- !u!114 &3201936747686029428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6293745914167754237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: c0fb91674d8a8df45b0a0e8cfa6242c8, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4a6343a3-ac32-4ecc-bbf6-28a6d48492e3
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 006e8950-555a-472b-951d-832ed0c054f0
+    m_ActionName: Player/Look[/Mouse/delta,/Touchscreen/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e1bec5ec-bd7c-462e-8295-bffe7099ec7d
+    m_ActionName: Player/Fire[/Mouse/leftButton,/Touchscreen/primaryTouch/tap]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cf79489a-46ba-4245-954c-c41b06a07167
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 716c0e8a-57e0-4aac-bdd2-a61a6a61a3a4
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0815c206-5bf7-45f5-95e9-6ba771f25646
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 967876ae-aa62-4e85-a768-8cdaa2bf0f1e
+    m_ActionName: UI/Point[/Mouse/position,/Touchscreen/touch0/position,/Touchscreen/touch1/position,/Touchscreen/touch2/position,/Touchscreen/touch3/position,/Touchscreen/touch4/position,/Touchscreen/touch5/position,/Touchscreen/touch6/position,/Touchscreen/touch7/position,/Touchscreen/touch8/position,/Touchscreen/touch9/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c1c18829-85be-47ba-a45a-aa9e8adc6a89
+    m_ActionName: UI/Click[/Mouse/leftButton,/Touchscreen/touch0/press,/Touchscreen/touch1/press,/Touchscreen/touch2/press,/Touchscreen/touch3/press,/Touchscreen/touch4/press,/Touchscreen/touch5/press,/Touchscreen/touch6/press,/Touchscreen/touch7/press,/Touchscreen/touch8/press,/Touchscreen/touch9/press]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 43d3140e-0a19-4f4e-8a3c-70fabe6d8768
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f37bc1f5-f09f-4de9-96bf-b7f0ceeb406f
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e8f2aaa2-b4d5-4071-8da5-58f2d8934beb
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: de9b3d94-a6ed-406b-afa3-7401759077c6
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 93f518a5-05cf-4b35-9392-529ef6fcbeb8
+    m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3286005337815669546}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: blah
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: be81f89b-3e40-40c4-8fe5-62afe9832e95
+    m_ActionName: UI/RestartLevel[/Keyboard/r]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: UI
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
