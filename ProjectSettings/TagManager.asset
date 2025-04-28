@@ -13,6 +13,7 @@ TagManager:
   - Pit
   - CameraTarget
   - Void
+  - SpawnPointSet
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Camera
   - Wall Box Layer
   - Box Layer
-  - 
+  - Void
   - 
   - 
   - 
