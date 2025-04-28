@@ -20,7 +20,10 @@ public class PlayerController : MonoBehaviour
     //Wrench
     public GameObject wrenchHitBox;
     private InputAction fire;
-    public bool isSwinging;
+    private bool isSwinging;
+
+    //Annoyed of wrench making off button
+    public bool wrenchOn = true;
 
     //Cutscene
     //public bool wantCutscene;
@@ -33,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         isSwinging = false;
         isPushing = false;
-        wrenchHitBox.SetActive(true);
+        wrenchHitBox.SetActive(false);
         CharacterAnimator.SetBool("FaceFront", true);
         /*if (wantCutscene)
         {
@@ -44,7 +47,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         playerControls = new Input();
-        OnEnable();
     }
     private void OnEnable()
     {
@@ -82,8 +84,6 @@ public class PlayerController : MonoBehaviour
             CharacterAnimator.SetBool("FaceRight", false);
             CharacterAnimator.SetBool("FaceBack", true);
             CharacterAnimator.SetBool("FaceFront", false);
-            wrenchHitBox.transform.position = rb.transform.position + new Vector3(0, .4f, 0);
-            wrenchHitBox.transform.eulerAngles = Vector3.forward * 0;
         }
         if (moveDirection.x == 1)
         {
@@ -92,8 +92,7 @@ public class PlayerController : MonoBehaviour
             CharacterAnimator.SetBool("FaceRight", true);
             CharacterAnimator.SetBool("FaceBack", false);
             CharacterAnimator.SetBool("FaceFront", false);
-            wrenchHitBox.transform.position = rb.transform.position + new Vector3(.4f, 0, 0);
-            wrenchHitBox.transform.eulerAngles = Vector3.forward * -90;
+
         }
         if (moveDirection.y < -.7)
         {
@@ -102,8 +101,6 @@ public class PlayerController : MonoBehaviour
             CharacterAnimator.SetBool("FaceRight", false);
             CharacterAnimator.SetBool("FaceBack", false);
             CharacterAnimator.SetBool("FaceFront", true);
-            wrenchHitBox.transform.position = rb.transform.position + new Vector3(0, -.4f, 0);
-            wrenchHitBox.transform.eulerAngles = Vector3.forward * 180;
 
         }
         if (moveDirection.x == -1)
@@ -113,8 +110,6 @@ public class PlayerController : MonoBehaviour
             CharacterAnimator.SetBool("FaceRight", false);
             CharacterAnimator.SetBool("FaceBack", false);
             CharacterAnimator.SetBool("FaceFront", false);
-            wrenchHitBox.transform.position = rb.transform.position + new Vector3(-.4f, 0, 0);
-            wrenchHitBox.transform.eulerAngles = Vector3.forward * 90;
 
 
 
@@ -126,7 +121,7 @@ public class PlayerController : MonoBehaviour
     //Left click calls this function
     private void Fire(InputAction.CallbackContext context)
     {
-        if (!isSwinging)
+        if (!isSwinging && wrenchOn)
         {
             Debug.Log("Swung Wrench");
             StartCoroutine(Swing());
@@ -139,14 +134,43 @@ public class PlayerController : MonoBehaviour
     {
         move.Disable();
 
-        CharacterAnimator.SetBool("isSwinging", true);
-        yield return new WaitForSeconds(0.3f);
         isSwinging = true;
+        CharacterAnimator.SetBool("isSwinging", isSwinging);
+        yield return new WaitForSeconds(0.333f);
+        if (CharacterAnimator.GetBool("FaceFront"))
+        {
+            wrenchHitBox.transform.position = rb.transform.position +  new Vector3(0,-.4f,0);
+            wrenchHitBox.transform.eulerAngles = Vector3.forward * 180;
+            wrenchHitBox.SetActive(true);
+
+        }
+        if (CharacterAnimator.GetBool("FaceBack"))
+        { 
+            wrenchHitBox.transform.position = rb.transform.position + new Vector3(0, .4f, 0);
+            wrenchHitBox.transform.eulerAngles = Vector3.forward * 0;
+
+            wrenchHitBox.SetActive(true);
+        }
+        if (CharacterAnimator.GetBool("FaceLeft"))
+        {
+            wrenchHitBox.transform.position = rb.transform.position + new Vector3(-.4f, 0, 0);
+            wrenchHitBox.transform.eulerAngles = Vector3.forward * 90;
+
+            wrenchHitBox.SetActive(true);
+        }
+        if (CharacterAnimator.GetBool("FaceRight"))
+        {
+            wrenchHitBox.transform.position = rb.transform.position + new Vector3(.4f, 0, 0);
+            wrenchHitBox.transform.eulerAngles = Vector3.forward * -90;
+
+            wrenchHitBox.SetActive(true);
+        }
+
 
         yield return new WaitForSeconds(0.4f);
         isSwinging = false;
-
-        CharacterAnimator.SetBool("isSwinging", false);
+        CharacterAnimator.SetBool("isSwinging", isSwinging);
+        wrenchHitBox.SetActive(false);
         move.Enable();
 
     }
