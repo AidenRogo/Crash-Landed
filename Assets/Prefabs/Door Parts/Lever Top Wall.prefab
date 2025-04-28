@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7428150182001015038}
   - component: {fileID: 21101695858042776}
   - component: {fileID: 5636968700980752691}
+  - component: {fileID: 2680129744019175694}
   m_Layer: 0
   m_Name: Lever Top Wall
   m_TagString: Untagged
@@ -96,6 +97,7 @@ MonoBehaviour:
   verticalLockedDoor: {fileID: 0}
   playerController: {fileID: 0}
   highlight: {fileID: 5636968700980752691}
+  leverAnimation: {fileID: 2680129744019175694}
 --- !u!212 &21101695858042776
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -160,3 +162,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1521f6c7d74fe40478368107d4643e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2680129744019175694
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7999840733353243504}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 982753e6202743f4cba4774910921acf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
