@@ -1498,6 +1498,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &321359936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5711947828987757426, guid: 640b8c7ef7fe23148843951b0e3a9d04, type: 3}
+  m_PrefabInstance: {fileID: 1958149709}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6bf40b4d8005544da64873d42058fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &367665143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7448209266536453005, guid: a4be417a4056aec4eb7e835b1c002b77, type: 3}
+  m_PrefabInstance: {fileID: 977935873}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee89aba214784f4aa0a21fb35839c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &367665148 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 5832276232430780612, guid: a4be417a4056aec4eb7e835b1c002b77, type: 3}
@@ -19743,7 +19765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2691086595990866034, guid: ce6fd9105da4a4148ac2a2da61b258ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -1.58
       objectReference: {fileID: 0}
     - target: {fileID: 2691086595990866034, guid: ce6fd9105da4a4148ac2a2da61b258ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19780,11 +19802,11 @@ PrefabInstance:
     - target: {fileID: 7428150182001015038, guid: ce6fd9105da4a4148ac2a2da61b258ab, type: 3}
       propertyPath: lockedDoor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 321359936}
     - target: {fileID: 7428150182001015038, guid: ce6fd9105da4a4148ac2a2da61b258ab, type: 3}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 367665143}
     - target: {fileID: 7999840733353243504, guid: ce6fd9105da4a4148ac2a2da61b258ab, type: 3}
       propertyPath: m_Name
       value: Lever Top Wall

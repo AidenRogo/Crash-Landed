@@ -51,10 +51,10 @@ public class LockedDoor : MonoBehaviour
     private IEnumerator MoveDoor(bool opening)
     {
         isMoving = true;
-        Vector3 targetPositionTopLeft = opening ? originalPositionTopLeft + new Vector3(-1, 0, 0) : originalPositionTopLeft;
-        Vector3 targetPositionBottomLeft = opening ? originalPositionBottomLeft + new Vector3(-1, 0, 0) : originalPositionBottomLeft;
-        Vector3 targetPositionTopRight = opening ? originalPositionTopRight + new Vector3(1, 0, 0) : originalPositionTopRight;
-        Vector3 targetPositionBottomRight = opening ? originalPositionBottomRight + new Vector3(1, 0, 0) : originalPositionBottomRight;
+        Vector3 targetPositionTopLeft = opening ? originalPositionTopLeft + new Vector3(-1.5f, 0, 0) : originalPositionTopLeft;
+        Vector3 targetPositionBottomLeft = opening ? originalPositionBottomLeft + new Vector3(-1.5f, 0, 0) : originalPositionBottomLeft;
+        Vector3 targetPositionTopRight = opening ? originalPositionTopRight + new Vector3(1.2f, 0, 0) : originalPositionTopRight;
+        Vector3 targetPositionBottomRight = opening ? originalPositionBottomRight + new Vector3(1.2f, 0, 0) : originalPositionBottomRight;
 
         while (Vector3.Distance(topLeftSide.position, targetPositionTopLeft) > 0.01f ||
                Vector3.Distance(bottomLeftSide.position, targetPositionBottomLeft) > 0.01f ||
