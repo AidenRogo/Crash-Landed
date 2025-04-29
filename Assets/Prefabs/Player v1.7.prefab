@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999342701102780041}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 28.52, y: 10.73, z: -0.09709093}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -294,6 +294,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   wrenchHitBox: {fileID: 7585665762145420410}
+  isSwinging: 0
   wrenchOn: 1
 --- !u!114 &8656643549474317322
 MonoBehaviour:
@@ -330,7 +331,7 @@ GameObject:
   m_TagString: Wrench
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4007295263955326881
 Transform:
@@ -342,7 +343,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 0}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8915452292385264159}

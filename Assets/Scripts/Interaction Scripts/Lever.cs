@@ -46,12 +46,13 @@ public class Lever : MonoBehaviour
     public LockedDoor lockedDoor; // Reference to the LockedDoor component
     public VerticalLockedDoor verticalLockedDoor; // Reference to the VerticalLockedDoor component
     public PlayerController playerController;
-    public HighlightInteractable highlight;
     public Animator leverAnimation;
     private bool isFlipped = false; // Flag to check if the lever is flipped
+    private SpriteRenderer sprite;
 
     void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
         if (lockedDoor == null && verticalLockedDoor == null)
         {
             Debug.LogError("Neither LockedDoor nor VerticalLockedDoor reference is set in the Inspector."); // Flag in the debug if there is no door tied to the lever
@@ -75,8 +76,7 @@ public class Lever : MonoBehaviour
     {
         if (other.CompareTag("Wrench"))
         {
-            highlight.Highlight();
-
+            sprite.color = Color.yellow;
         }
         
     }
@@ -104,7 +104,7 @@ public class Lever : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        highlight.unHighlight();
+        sprite.color = Color.white;
 
     }
 
