@@ -823,6 +823,18 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[4].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 3802537608083962372, guid: df71de2fc9e7c4642a6481794ae3dfec, type: 3}
+      propertyPath: wireColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3802537608083962372, guid: df71de2fc9e7c4642a6481794ae3dfec, type: 3}
+      propertyPath: wireColor.g
+      value: 0.020500721
+      objectReference: {fileID: 0}
+    - target: {fileID: 3802537608083962372, guid: df71de2fc9e7c4642a6481794ae3dfec, type: 3}
+      propertyPath: wireColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4311300554596623664, guid: df71de2fc9e7c4642a6481794ae3dfec, type: 3}
       propertyPath: m_Size.x
       value: 50
@@ -1616,9 +1628,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 612639301448420270, guid: e5717b624367d644580181e68d82362c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1223199621470291262, guid: e5717b624367d644580181e68d82362c, type: 3}
       propertyPath: m_Name
       value: Pressure Plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223199621470291262, guid: e5717b624367d644580181e68d82362c, type: 3}
+      propertyPath: m_TagString
+      value: PressurePlate
       objectReference: {fileID: 0}
     - target: {fileID: 7562017863401843095, guid: e5717b624367d644580181e68d82362c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2125,6 +2145,10 @@ PrefabInstance:
     - target: {fileID: 1999342701102780041, guid: a4be417a4056aec4eb7e835b1c002b77, type: 3}
       propertyPath: m_Name
       value: Player v1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231920728757679737, guid: a4be417a4056aec4eb7e835b1c002b77, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8915452292385264159, guid: a4be417a4056aec4eb7e835b1c002b77, type: 3}
       propertyPath: m_LocalPosition.x

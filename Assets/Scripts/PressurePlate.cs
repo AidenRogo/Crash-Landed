@@ -53,12 +53,13 @@ public class PressurePlate : MonoBehaviour
     // Method to detect when the player or box leaves the pressure plate
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Box")) // Check if object leaving the pressure plate is tagged with "Player" or "Box"
+        if (other.CompareTag("Player") || other.CompareTag("Box") || other.CompareTag("Fuse")) // Check if object leaving the pressure plate is tagged with "Player" or "Box"
         {
             objectsOnPlate--;
-            animator.SetBool("Pressed",false); //Run the animation for the pressure plate turning off.
             if (objectsOnPlate == 0) // Only start the close timer if there are no objects left on the plate
             {
+                animator.SetBool("Pressed", false); //Run the animation for the pressure plate turning off.
+
                 closeCoroutine = StartCoroutine(CloseDoorAfterDelay());
                 Debug.Log("Pressure plate deactivated, starting close timer");
             }
