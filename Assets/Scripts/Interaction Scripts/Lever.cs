@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
 /*public class LockedDoorButton : MonoBehaviour
@@ -42,49 +45,112 @@ public class Lever : MonoBehaviour
 {
     public LockedDoor lockedDoor; // Reference to the LockedDoor component
     public VerticalLockedDoor verticalLockedDoor; // Reference to the VerticalLockedDoor component
-
+    public PlayerController playerController;
+    public Animator leverAnimation;
     private bool isFlipped = false; // Flag to check if the lever is flipped
+    private SpriteRenderer sprite;
 
     void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
         if (lockedDoor == null && verticalLockedDoor == null)
         {
             Debug.LogError("Neither LockedDoor nor VerticalLockedDoor reference is set in the Inspector."); // Flag in the debug if there is no door tied to the lever
         }
     }
+    /*private void Update()
+    {
+        if (isFlipped)
+        {
+            transform.eulerAngles = Vector3.forward * 180;
+
+        }
+        else
+        {
+            transform.eulerAngles = Vector3.forward * 0;
+
+        }
+    }*/
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Wrench")) // Check if the player collides with the lever
+        if (other.CompareTag("Wrench"))
         {
-            isFlipped = !isFlipped; // Toggle the lever state
+            sprite.color = Color.yellow;
+        }
+        
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if(verticalLockedDoor != null)
+            if ((other.CompareTag("Wrench") && playerController.isSwinging && !verticalLockedDoor.isMoving)) // Check if the player collides with the lever
+            {
+
+                isFlipped = !isFlipped; // Toggle the lever state
+                StartCoroutine(OpenVerticleDoor());
+            }
+
+        if (lockedDoor != null)
+        {
+            if ((other.CompareTag("Wrench") && playerController.isSwinging && !lockedDoor.isMoving))
+            {
+                isFlipped = !isFlipped; // Toggle the lever state
+                StartCoroutine(OpenDoor());
+            }
+        }
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        sprite.color = Color.white;
+
+    }
+
+    IEnumerator OpenDoor()
+    {
+
+        yield return new WaitForSeconds(.29f);
             if (lockedDoor != null) // Runs the function if the door is not null
             {
                 if (isFlipped)
                 {
-                    transform.Rotate(0, 0, 180); // Rotate the lever to indicate it is flipped
                     lockedDoor.OpenDoor(); // Call the OpenDoor method in the LockedDoor script
-                }
-                else
+                    leverAnimation.SetBool("isFlipped", true);
+            }
+            else
                 {
-                    transform.Rotate(0, 0, -180); // Rotate the lever back to its original position
                     lockedDoor.CloseDoor(); // Call the CloseDoor method in the LockedDoor script
-                }
+                    leverAnimation.SetBool("isFlipped", false);
+
             }
-            else if (verticalLockedDoor != null) // Runs the function if the vertical door is not null
-            {
-                if (isFlipped)
-                {
-                    transform.Rotate(0, 0, 180); // Rotate the lever to indicate it is flipped
-                    verticalLockedDoor.OpenDoor(); // Call the OpenDoor method in the VerticalLockedDoor script
-                }
-                else
-                {
-                    transform.Rotate(0, 0, -180); // Rotate the lever back to its original position
-                    verticalLockedDoor.CloseDoor(); // Call the CloseDoor method in the VerticalLockedDoor script
-                }
-            }
-            Debug.Log("Lever flipped, door state toggled");
         }
+            
+            Debug.Log("Lever flipped, door state toggled");
+        yield return null;
+        }
+    IEnumerator OpenVerticleDoor()
+    {
+        yield return new WaitForSeconds(.29f);
+        
+        if (verticalLockedDoor != null) // Runs the function if the vertical door is not null
+        {
+            if (isFlipped)
+            {
+                verticalLockedDoor.OpenDoor(); // Call the OpenDoor method in the VerticalLockedDoor script
+                leverAnimation.SetBool("isFlipped", true);
+
+            }
+            else
+            {
+                verticalLockedDoor.CloseDoor(); // Call the CloseDoor method in the VerticalLockedDoor script
+                leverAnimation.SetBool("isFlipped", false);
+
+            }
+        }
+        Debug.Log("Lever flipped, door state toggled");
+        yield return null;
     }
 }
+
