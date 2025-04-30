@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9061634361096374601}
   - component: {fileID: 1527453212062736687}
   - component: {fileID: 612639301448420270}
+  - component: {fileID: 8008496863688987312}
   m_Layer: 0
   m_Name: Pressure Plate
   m_TagString: Untagged
@@ -169,3 +170,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8008496863688987312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223199621470291262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda0a0e135e9adc4fb820d7cd9626c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WireSet: {fileID: 0}
