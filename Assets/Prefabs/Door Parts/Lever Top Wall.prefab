@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3692718678378211423}
   - component: {fileID: 7428150182001015038}
   - component: {fileID: 21101695858042776}
-  - component: {fileID: 5636968700980752691}
   - component: {fileID: 2680129744019175694}
   m_Layer: 0
   m_Name: Lever Top Wall
@@ -95,8 +94,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockedDoor: {fileID: 0}
   verticalLockedDoor: {fileID: 0}
-  playerController: {fileID: 0}
-  highlight: {fileID: 5636968700980752691}
   leverAnimation: {fileID: 2680129744019175694}
 --- !u!212 &21101695858042776
 SpriteRenderer:
@@ -150,18 +147,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5636968700980752691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7999840733353243504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1521f6c7d74fe40478368107d4643e63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &2680129744019175694
 Animator:
   serializedVersion: 5

@@ -39,7 +39,6 @@ public class VoidKill : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Holy Sigma!");
         if (collision.CompareTag("Void"))
         {
             playerSpring.connectedBody = collision.GetComponent<Rigidbody2D>();
