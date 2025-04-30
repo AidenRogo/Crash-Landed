@@ -42,7 +42,7 @@ public class CheckWrenchActivatesSwitchActivatesDoor : InputTestFixture
         yield return new WaitForSeconds(2.1f);
 
         Press(keyboard.wKey);
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.02f);
         Release(keyboard.wKey);
         yield return new WaitForSeconds(0.01f);
 

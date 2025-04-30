@@ -20,8 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Obsolete/Level 1.unity
     guid: 8a7c5c5f7d639fa40b19976b04fad6d3
-  - enabled: 1
-    path: Assets/Scenes/Obsolete/Level 2.unity
+  - enabled: 0
+    path: Assets/Scenes/Level 2.unity
     guid: 64a5a6d62c9dff2418857a40e0e225e9
   - enabled: 1
     path: Assets/Scenes/Temp.unity
@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TEST Scenes/TEST 1.unity
     guid: 512b5dfcde3a32f4abef681ddc99f868
+  - enabled: 1
+    path: Assets/Scenes/TEST Scenes/TEST 2.unity
+    guid: 50ca7a13e1268d7428726b7662e7aecd
   m_configObjects: {}
