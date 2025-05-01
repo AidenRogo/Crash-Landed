@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Finished Levels/7 Double Door.unity
     guid: a805fbf156e1a0643886f5fcf68d9143
+  - enabled: 1
+    path: Assets/Scenes/Finished Levels/8 Ending.unity
+    guid: f9f3b08a940417e46978287fe10524f2
   m_configObjects: {}

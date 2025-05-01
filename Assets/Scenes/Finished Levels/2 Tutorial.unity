@@ -31847,6 +31847,18 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[4].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 3802537608083962372, guid: df71de2fc9e7c4642a6481794ae3dfec, type: 3}
+      propertyPath: wireColor.b
+      value: 0.03830923
+      objectReference: {fileID: 0}
+    - target: {fileID: 3802537608083962372, guid: df71de2fc9e7c4642a6481794ae3dfec, type: 3}
+      propertyPath: wireColor.g
+      value: 0.03830923
+      objectReference: {fileID: 0}
+    - target: {fileID: 3802537608083962372, guid: df71de2fc9e7c4642a6481794ae3dfec, type: 3}
+      propertyPath: wireColor.r
+      value: 0.93710685
+      objectReference: {fileID: 0}
     - target: {fileID: 4311300554596623664, guid: df71de2fc9e7c4642a6481794ae3dfec, type: 3}
       propertyPath: m_Size.y
       value: 19
