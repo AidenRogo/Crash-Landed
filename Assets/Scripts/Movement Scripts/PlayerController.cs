@@ -154,9 +154,9 @@ public class PlayerController : MonoBehaviour
         move.Disable();
 
         CharacterAnimator.SetBool("isSwinging", true);
-        yield return new WaitForSeconds(0.3f);
-        wrenchHitBox.SetActive(true);
         yield return new WaitForSeconds(0.4f);
+        wrenchHitBox.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
         isSwinging = false;
         wrenchHitBox.SetActive(false);
         CharacterAnimator.SetBool("isSwinging", false);
