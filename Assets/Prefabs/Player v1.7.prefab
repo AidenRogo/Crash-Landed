@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorToTurnTo: {r: 0, g: 0, b: 0, a: 1}
-  shrinkSpeed: 3.5
+  shrinkSpeed: 2.5
   minSize: 0.05
   controller: {fileID: 7448209266536453005}
   spriteRenderer: {fileID: 7231920728757679737}
