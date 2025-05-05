@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8cc129cebf09ad148b1461b218488693
+guid: 43e2df96f7383004fb4c0373ea6268cb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,169 +123,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wrench-animation-back_0
+      name: SpriteSheetWrenchBack (1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 35
+        y: 32
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c0c3c4812ee0d64a83b4a7370834f52
-      internalID: 1872950687
+      spriteID: 979936218b8d7d54d93ac1bcecc68fe1
+      internalID: -1625646374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wrench-animation-back_1
+      name: SpriteSheetWrenchBack (1)_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 35
+        y: 32
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8650fda48b5f7e74398777e7e9e19508
-      internalID: -759289511
+      spriteID: c68182af02516894b89b5aca2dd23353
+      internalID: 280968361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wrench-animation-back_2
+      name: SpriteSheetWrenchBack (1)_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 35
+        y: 32
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bde233097e33c224180bb51017ca100d
-      internalID: -430484172
+      spriteID: f366dde59218b8a4e89bf839ca68b336
+      internalID: 372048128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wrench-animation-back_3
+      name: SpriteSheetWrenchBack (1)_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 35
+        y: 32
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00be14f1680ed2c4994d9d32f358a83b
-      internalID: 23499220
+      spriteID: 70d4526e937b1ee46af7bf8ca91bc2ce
+      internalID: -75714634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wrench-animation-back_4
+      name: SpriteSheetWrenchBack (1)_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
+        y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdd026014bc61a64d9243d4953175333
-      internalID: 1539124415
+      spriteID: 75eddfc78815bc249b4b2ac73aabacf6
+      internalID: -1317047163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wrench-animation-back_5
+      name: SpriteSheetWrenchBack (1)_5
       rect:
         serializedVersion: 2
         x: 32
-        y: 2
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3098bf480608174895c0e5a702037e6
-      internalID: 874526396
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: no
-      rect:
-        serializedVersion: 2
-        x: 95
         y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3e27676536b4cc4a8ea13d6fd7e543f
-      internalID: 668850812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: n
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab2e35b9dfd5b3044bceab9deaf0dca4
-      internalID: -963169499
+      spriteID: e9289c15f72378140aba9bc001b154a7
+      internalID: -2118262319
       vertices: []
       indices: 
       edges: []
@@ -301,14 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      n: -963169499
-      no: 668850812
-      wrench-animation-back_0: 1872950687
-      wrench-animation-back_1: -759289511
-      wrench-animation-back_2: -430484172
-      wrench-animation-back_3: 23499220
-      wrench-animation-back_4: 1539124415
-      wrench-animation-back_5: 874526396
+      SpriteSheetWrenchBack (1)_0: -1625646374
+      SpriteSheetWrenchBack (1)_1: 280968361
+      SpriteSheetWrenchBack (1)_2: 372048128
+      SpriteSheetWrenchBack (1)_3: -75714634
+      SpriteSheetWrenchBack (1)_4: -1317047163
+      SpriteSheetWrenchBack (1)_5: -2118262319
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
