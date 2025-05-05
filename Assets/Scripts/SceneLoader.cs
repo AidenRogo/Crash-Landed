@@ -16,7 +16,7 @@ public class SceneLoader : MonoBehaviour
        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + SceneIndex));
     }
 
-    public void blah(InputAction.CallbackContext context)
+    public void Blah(InputAction.CallbackContext context)
     {
 
         if (context.performed)

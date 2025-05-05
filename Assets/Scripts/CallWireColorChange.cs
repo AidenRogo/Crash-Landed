@@ -8,6 +8,7 @@ public class CallWireColorChange : MonoBehaviour
 {
     public GameObject WireSet;
     private WireSetScript script;
+    private int collisionCount = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -17,12 +18,24 @@ public class CallWireColorChange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        script.TurnOn();
-        Debug.Log("testonetwothree");
+        if (collision.CompareTag("Player") || collision.CompareTag("Fuse") || collision.CompareTag("Box"))
+        {
+            collisionCount++;
+
+            script.TurnOn();
+            Debug.Log("testonetwothree");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        script.TurnOff();
+        if (collision.CompareTag("Player") || collision.CompareTag("Fuse") || collision.CompareTag("Box"))
+        {
+            collisionCount--;
+            if (collisionCount == 0)
+            {
+                script.TurnOff();
+            }
+        }
     }
 }

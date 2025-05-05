@@ -49,6 +49,7 @@ public class VoidKill : MonoBehaviour
         }
         else if (collision.CompareTag("SpawnPointSet"))
         {
+            Debug.Log("CheckPoint Set");
             spawnPoint = collision.transform.position;
         }
     }
