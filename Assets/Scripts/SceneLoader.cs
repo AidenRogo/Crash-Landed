@@ -16,13 +16,15 @@ public class SceneLoader : MonoBehaviour
        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + SceneIndex));
     }
 
-    public void Blah(InputAction.CallbackContext context)
-    {
+    public void RestartLevel(InputAction.CallbackContext context)
+    {   
+              
 
         if (context.performed)
         {
+            Debug.Log("Level Restarted");
             StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
-            Debug.Log("Blah");
+     
         }
        
 
@@ -31,16 +33,31 @@ public class SceneLoader : MonoBehaviour
 
 
 
-    IEnumerator LoadLevel(int levelIndex){
-        //play the transition animation
-        Transition.SetTrigger("Start");
-        //wait for the animation to finish
-        yield return new WaitForSeconds(transitionTime);
-        //load the scene
-        SceneManager.LoadScene(levelIndex);
+    // IEnumerator LoadLevel(int levelIndex){
+    //     //play the transition animation
+    //     Transition.SetTrigger("Start");
+    //     //wait for the animation to finish
+    //     yield return new WaitForSeconds(transitionTime);
+    //     //load the scene
+    //     SceneManager.LoadScene(levelIndex);
 
 
-    }
+    // }
+
+    IEnumerator LoadLevel(int levelIndex)
+{
+    // Play the transition animation
+    Transition.SetTrigger("Start");
+
+    // Wait for the animation to finish
+    yield return new WaitForSeconds(transitionTime);
+
+    // Reset the trigger to allow future transitions
+    Transition.ResetTrigger("Start");
+
+    // Load the scene
+    SceneManager.LoadScene(levelIndex);
+}
 
 
 
