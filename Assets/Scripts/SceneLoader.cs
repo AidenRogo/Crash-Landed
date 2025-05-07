@@ -16,20 +16,20 @@ public class SceneLoader : MonoBehaviour
        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + SceneIndex));
     }
 
-    public void RestartLevel(InputAction.CallbackContext context)
-    {   
+    // public void RestartLevel(InputAction.CallbackContext context)
+    // {   
               
 
-        if (context.performed)
-        {
-            Debug.Log("Level Restarted");
-            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
+    //     if (context.performed)
+    //     {
+    //         Debug.Log("Level Restarted");
+    //         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
      
-        }
+    //     }
        
 
       
-    }
+    // }
 
 
 
