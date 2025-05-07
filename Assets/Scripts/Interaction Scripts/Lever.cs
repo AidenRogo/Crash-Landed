@@ -45,7 +45,6 @@ public class Lever : MonoBehaviour
 {
     public LockedDoor lockedDoor; // Reference to the LockedDoor component
     public VerticalLockedDoor verticalLockedDoor; // Reference to the VerticalLockedDoor component
-    public PlayerController playerController;
     public Animator leverAnimation;
     private bool isFlipped = false; // Flag to check if the lever is flipped
     private SpriteRenderer sprite;
@@ -74,17 +73,12 @@ public class Lever : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Wrench"))
+        if (other.CompareTag("HighLightBox"))
         {
             sprite.color = Color.yellow;
         }
-        
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if(verticalLockedDoor != null)
-            if ((other.CompareTag("Wrench") && playerController.isSwinging && !verticalLockedDoor.isMoving)) // Check if the player collides with the lever
+        if (verticalLockedDoor != null)
+            if ((other.CompareTag("Wrench")  && !verticalLockedDoor.isMoving)) // Check if the player collides with the lever
             {
 
                 isFlipped = !isFlipped; // Toggle the lever state
@@ -93,25 +87,29 @@ public class Lever : MonoBehaviour
 
         if (lockedDoor != null)
         {
-            if ((other.CompareTag("Wrench") && playerController.isSwinging && !lockedDoor.isMoving))
+            if ((other.CompareTag("Wrench") && !lockedDoor.isMoving))
             {
                 isFlipped = !isFlipped; // Toggle the lever state
                 StartCoroutine(OpenDoor());
             }
         }
-        
+
     }
+
+
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        sprite.color = Color.white;
+        if (other.CompareTag("HighLightBox"))
+        { 
+            sprite.color = Color.white;
+    } 
 
     }
 
     IEnumerator OpenDoor()
     {
 
-        yield return new WaitForSeconds(.29f);
             if (lockedDoor != null) // Runs the function if the door is not null
             {
                 if (isFlipped)
@@ -132,7 +130,6 @@ public class Lever : MonoBehaviour
         }
     IEnumerator OpenVerticleDoor()
     {
-        yield return new WaitForSeconds(.29f);
         
         if (verticalLockedDoor != null) // Runs the function if the vertical door is not null
         {
